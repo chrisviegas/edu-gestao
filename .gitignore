@@ -1,5 +1,29 @@
-*.venv
-.vscode/
-*.pyc
+# Cache do Python
 __pycache__/
+*.py[cod]
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Configurações sensíveis / ambiente
+.env
+*.env
+instance/
+
+# Testes e cobertura
 .pytest_cache/
+.coverage
+htmlcov/
+
+# Artefatos de build/distribuição
+dist/
+build/
+*.egg-info/
+
+# IDEs e sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
