@@ -1,3 +1,3 @@
-# Projeto para a Futuro Digital
+# Edu Gestão RS
 
-Projeto para a bolsa Futuro Digital
+API de Gestão Educacional e Vagas 
