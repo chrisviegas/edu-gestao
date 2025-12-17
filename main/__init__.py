@@ -14,5 +14,6 @@ def create_app():
     init_db(app)
     
     migrate.init_app(app=app, db=db)
+    from src import models
     
     return app
