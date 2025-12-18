@@ -1,7 +1,8 @@
-from sqlalchemy import String, BigInteger
+from sqlalchemy import String, BigInteger, Enum
 from sqlalchemy.orm import Mapped, mapped_column, relationship, composite
 from src.config.db_config import db
 from src.domain.address import Address
+from src.domain.enums.school_type import SchoolType
 
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
@@ -30,5 +31,7 @@ class School(db.Model):
         address_state,
         address_zip_code,
     )
+    
+    school_type: Mapped[SchoolType] = mapped_column(Enum(SchoolType, name="school_type_enum", values_callable=lambda e: [m.value for m in e], validate_strings=True), nullable=False)
     
     users: Mapped[list["User"]] = relationship(back_populates="school")
