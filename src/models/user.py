@@ -19,7 +19,7 @@ class User(db.Model):
     
     hash_password: Mapped[str] = mapped_column(String, nullable=False)
     
-    school_id: Mapped[int] = mapped_column(ForeignKey("schools.id"))
+    school_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("schools.id"))
     school: Mapped["School"] = relationship(back_populates="users")
     
     roles: Mapped[list["Role"]] = relationship("Role", secondary=roles_users, back_populates="users")
@@ -28,5 +28,5 @@ class User(db.Model):
         return {"id": self.id, "name": self.name, "email": self.email}
     
     def __repr__(self) -> str:
-        return f"<UserModel(id={self.id}, name='{self.name}')>"
+        return f"<User(id={self.id}, name='{self.name}')>"
     

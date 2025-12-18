@@ -7,6 +7,7 @@ from src.domain.enums.school_type import SchoolType
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from src.models.user import User
+    from src.models.school_class import SchoolClass
 
 class School(db.Model):
     __tablename__ = "schools"
@@ -35,3 +36,5 @@ class School(db.Model):
     school_type: Mapped[SchoolType] = mapped_column(Enum(SchoolType, name="school_type_enum", values_callable=lambda e: [m.value for m in e], validate_strings=True), nullable=False)
     
     users: Mapped[list["User"]] = relationship(back_populates="school")
+    
+    school_classes: Mapped[list["SchoolClass"]] = relationship(back_populates="school", cascade="all, delete-orphan")
