@@ -38,8 +38,10 @@ def create_app():
     from src import models  # noqa: F401
     from src.routes.login import login_bp
     from src.routes.users import users_bp
+    from src.routes.schools import schools_bp
 
     app.register_blueprint(login_bp)
     app.register_blueprint(users_bp)
+    app.register_blueprint(schools_bp)
 
     return app
