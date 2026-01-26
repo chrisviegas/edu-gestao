@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "alembic==1.17.2",
+    "bcrypt>=5.0.0",
     "blinker==1.9.0",
     "certifi==2025.11.12",
     "charset-normalizer==3.4.4",
