@@ -23,6 +23,7 @@ build/
 *.egg-info/
 
 # IDEs e sistema operacional
+.zed/
 .vscode/
 .idea/
 .DS_Store
